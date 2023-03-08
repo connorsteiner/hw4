@@ -1,7 +1,7 @@
 <h1><%= @place["name"] %></h1>
 
 <p>
-  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-outline-primary">New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-outline-success">New Post</a>
 </p>
 
 <h2>My Posts</h2>
@@ -11,11 +11,14 @@
     <div class="col-lg-4 column-gap-2">
       <h3><%= post["title"] %></h3>
       <h4><%= post["posted_on"] %></h4>
-      <p><%= post["description"] %></p>
+      <div class="h-30">
+        <p><%= post["description"] %></p>
+      </div>
+      <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
     </div>
   <% end %>
 </div>
-
+<br>
 <p>
   <a href="/places" class="btn btn-outline-primary">Back to All Places</a>
 </p>
